@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>My To Do List</title>
+</head>
+<body>
+
+    <div class="logout-container">
+        <button id="logout-btn">Logout</button>
+    </div>
+    
+    <div class="main-container">
+        <h1>My Tasks</h1>
+        <p>Create and manage your tasks efficiently.</p>
+    </div>
+
+    <div class="task-container">
+        <h2>Add a New Task</h2>
+    <form id="add-task-form">
+        <input type="text" id="task-name" name="task-name" placeholder="Task name" required>
+        <input type="text" id="task-description" name="task-description" placeholder="Description" required>
+        <button type="submit">Add Task</button>
+        <p id="addErrorMsg" style="color: red;"></p>
+    </form>
+    </div>
+
+    
+    <div class="table-container">
+        <table class="task-table">
+            <thead>
+                <tr>
+                    <th>Task name</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="task-list"></tbody>
+        </table>
+    </div>
+
+    <div id="edit-modal" style="display:none;">
+        <h3>Edit Task</h3>
+        <form id="edit-task-form">
+            <input type="hidden" id="edit-item-id">
+            <input type="text" id="edit-task-name" required>
+            <input type="text" id="edit-task-description" required>
+            <button type="submit">Save</button>
+            <button type="button" id="cancel-edit-btn">Cancel</button>
+        </form>
+    </div>
+
+    <script src="api.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
